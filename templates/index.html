@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🌱 Smart Crop Recommendation System</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f3f9f1, #e1f5fe);
+      color: #2e7d32;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: #ffffff;
+      padding: 30px 40px;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      text-align: center;
+      color: #1b5e20;
+    }
+
+    .info-section {
+      margin-bottom: 30px;
+      background-color: #e8f5e9;
+      padding: 20px;
+      border-left: 6px solid #43a047;
+      border-radius: 10px;
+    }
+
+    .info-section h2 {
+      margin-top: 0;
+      color: #2e7d32;
+    }
+
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 14px;
+      border: 1px solid #c8e6c9;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    .full-width {
+      grid-column: 1 / -1;
+    }
+
+    button {
+      padding: 12px;
+      background-color: #2e7d32;
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #1b5e20;
+    }
+
+    .result {
+      margin-top: 30px;
+      background-color: #c8e6c9;
+      padding: 20px;
+      border-left: 5px solid #2e7d32;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .note {
+      font-size: 13px;
+      color: #555;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>🌾 Crop Recommendation System</h1>
+
+    <div class="info-section">
+      <h2>📘 About This Model</h2>
+      <p>This system uses a <strong>Decision Tree Classifier</strong> trained on real agricultural data to predict the most suitable crop to cultivate based on environmental and soil conditions.</p>
+      <ul>
+        <li>🔢 Inputs: N, P, K (soil nutrients), temperature, humidity, pH, rainfall</li>
+        <li>🧠 Output: Best-suited crop for given conditions (e.g., rice, maize, cotton)</li>
+        <li>🎯 Goal: Maximize yield and sustainability by intelligent crop planning</li>
+      </ul>
+    </div>
+
+    <form method="POST">
+      <div>
+        <label for="N">Nitrogen (0–140)</label>
+        <input type="number" name="N" id="N" min="0" max="140" required>
+        <div class="note">Essential for leaf growth</div>
+      </div>
+
+      <div>
+        <label for="P">Phosphorus (5–145)</label>
+        <input type="number" name="P" id="P" min="5" max="145" required>
+        <div class="note">Helps root and flower development</div>
+      </div>
+
+      <div>
+        <label for="K">Potassium (5–205)</label>
+        <input type="number" name="K" id="K" min="5" max="205" required>
+        <div class="note">Improves plant metabolism</div>
+      </div>
+
+      <div>
+        <label for="temperature">Temperature (10–45°C)</label>
+        <input type="number" step="0.01" name="temperature" id="temperature" min="10" max="45" required>
+        <div class="note">Ideal range depends on crop type</div>
+      </div>
+
+      <div>
+        <label for="humidity">Humidity (10–90%)</label>
+        <input type="number" step="0.01" name="humidity" id="humidity" min="10" max="90" required>
+        <div class="note">Moisture in the atmosphere</div>
+      </div>
+
+      <div>
+        <label for="ph">Soil pH (3.5–9.5)</label>
+        <input type="number" step="0.01" name="ph" id="ph" min="3.5" max="9.5" required>
+        <div class="note">Soil acidity/alkalinity</div>
+      </div>
+
+      <div>
+        <label for="rainfall">Rainfall (20–300 mm)</label>
+        <input type="number" step="0.01" name="rainfall" id="rainfall" min="20" max="300" required>
+        <div class="note">Expected rainfall in the area</div>
+      </div>
+
+      <div class="full-width">
+        <button type="submit">🌿 Predict Best Crop</button>
+      </div>
+    </form>
+
+    {% if result %}
+    <div class="result">
+      <h2>✅ Recommended Crop: <strong>{{ result }}</strong></h2>
+    </div>
+    {% endif %}
+  </div>
+</body>
+</html>
