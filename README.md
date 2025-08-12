@@ -1,12 +1,12 @@
-# 🌾 Crop Recommendation System using Decision Tree
+#  Crop Recommendation System using Decision Tree
 
-## 📌 Overview
+##  Overview
 This project is a **Flask web application** that predicts the most suitable crop for cultivation based on soil nutrients and environmental conditions.  
 It uses a **Decision Tree Classifier** trained on the "Crop Recommendation Dataset".
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 ```
 project/
 │
@@ -18,20 +18,26 @@ project/
 │   └── train_model.py         # Script to train and save the model
 ├── templates/
 │   └── index.html             # Frontend HTML form
-├── static/                    # (Optional) CSS, JS, images
+|                    
 └── README.md                  # Project documentation
 ```
 
 ---
 
 ## 🖼 Project Image Placeholder
-*(Add your screenshot or diagram below)*
 
-![Project Screenshot](path/to/your/image.png)
+Step1:Enter values 
+![alt text](image.png)
+
+------
+Result page:
+![alt text](image-1.png)
+
+
 
 ---
 
-## 📊 Dataset
+##  Dataset
 The dataset contains **soil and climate features** to predict the best crop.
 
 | Feature       | Description                                   |
@@ -47,12 +53,12 @@ The dataset contains **soil and climate features** to predict the best crop.
 
 ---
 
-## ⚙️ Installation & Setup
+##  Installation & Setup
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/crop-recommendation.git
-   cd crop-recommendation
+   git clone https://github.com/nithinskumar866/Decisiontree_algorithm.git
+   cd --
    ```
 
 2. **Install dependencies**
@@ -79,14 +85,14 @@ The dataset contains **soil and climate features** to predict the best crop.
 
 ---
 
-## 🖥 Usage
+##  Usage
 * Enter **soil and climate values** in the form.
 * Click **Predict Crop**.
 * The system will display the **recommended crop**.
 
 ---
 
-## 📦 Dependencies
+##  Dependencies
 * Python 3.8+
 * Flask
 * Pandas
@@ -101,17 +107,11 @@ pip install flask pandas numpy scikit-learn
 
 ---
 
-## 📈 Model Information
+##  Model Information
 * **Algorithm**: Decision Tree Classifier
 * **Training-Testing Split**: 80-20
 * **Evaluation Metric**: Accuracy
 
 ---
 
-## 📜 License
-This project is open-source and available under the **MIT License**.
 
----
-
-## ✨ Author
-Developed by Nithin.S
